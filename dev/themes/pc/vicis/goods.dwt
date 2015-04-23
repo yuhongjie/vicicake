@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+
+    <!--兼容-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <!-- end -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="Keywords" content="{$keywords}" />
+    <meta name="Description" content="{$description}" />
+    <!--ecshop 可编辑模板-->
+    <!-- TemplateBeginEditable name="doctitle" -->
+    <title>{$page_title}</title>
+    <!-- TemplateEndEditable -->
+    <!-- TemplateBeginEditable name="head" -->
+    <!-- TemplateEndEditable -->
+  <!-- 标题 -->
+  <link rel="alternate" type="application/rss+xml" title="RSS|{$page_title}" href="{$feed_url}" />
+  <!-- 详情页面不能去掉，去掉后缩略图放大  -->
+  <!--[if IE 8 ]>
+       <html class="ie8" <![endif]--> 
+   <!--[if IE 9 ]>
+           <html class="ie9">
+           <![endif]--> 
+   <!--[if lt IE 7]>
+             <script type="text/javascript">
+               //<![CDATA[
+               var BLANK_URL = '';
+               var BLANK_IMG = 'js/spacer.gif';
+               //]]>
+               
+             </script>
+           <![endif]--> 
+
+  <link rel="stylesheet" type="text/css" href="themes/vicis/css/home.css"/>
+  <link rel="stylesheet" type="text/css" href="themes/vicis/css/styles.css" media="all"/>
+  <link rel="stylesheet" type="text/css" href="themes/vicis/css/bootstrap.min.css" media="all"/>
+  <link rel="stylesheet" type="text/css" href="themes/vicis/css/font-awesome.min.css" media="all" />
+  <!--menu-->
+  <link rel="stylesheet" type="text/css" href="themes/vicis/css/megamenu.css" media="all"/>
+  <link rel="stylesheet" type="text/css" href="themes/vicis/css/design_default.css" media="all"/>
+  <link rel="stylesheet" type="text/css" href="themes/vicis/css/product_detail.css" media="all"/>
+  
+  <script type="text/javascript" src="js/prototype.js">
+          </script> 
+  <!-- 缩略图-->
+  <script type="text/javascript" src="js/form.js">
+          </script> 
+  <script type="text/javascript" src="js/jquery-1.8.2.min.js">
+          </script> 
+  <script type="text/javascript" src="js/wow.min.js">
+          </script> 
+  <!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+      <script src="js/respond.min.js"></script>
+  <![endif]-->
+    <script type="text/javascript" src="js/bootstrap-tooltip.js">
+            </script> 
+    <script type="text/javascript" src="js/jquery.lib.min.js">
+            </script> 
+    <!--放大镜插件-->
+     <script type="text/javascript" src="js/cloud-zoom.1.0.3.js">
+          </script> 
+    <!--缩略图切换插件-->
+    <script type="text/javascript" src="js/jquery.flexslider.js">
+            </script> 
+
+  {* 包含脚本文件 *}
+  {insert_scripts files='transport.js,common.js,compare.js'}
+ </head> 
+ <body class="catalog-product-view catalog-product-view product-sweet-deliciousness"> 
+  <section class="mt-container"> 
+    <!-- navigation BOF -->
+    <!-- #BeginLibraryItem "/library/page_small_header.lbi" --><!-- #EndLibraryItem -->
+   <section class="mt-wrapper"> 
+        <!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem -->
+    <section class="main-container col1-layout"> 
+     <div class="container-main"> 
+      <div class="main-content container"> 
+       <div class="row"> 
+        <div class="col-main"> 
+         <div class="product-view "> 
+          <div class="product-essential show-grid"> 
+            <div class="no-display col-lg-12"> 
+             <input type="hidden" name="product" value="11" /> 
+             <input type="hidden" name="related_product" id="related-products-field" value="" /> 
+            </div> 
+            <div class="product-img-box col-lg-5 col-md-5 col-sm-5"> 
+             <!-- --> 
+            <p class="product-image" style="width:376px;height:420px;"> 
+              <a class="cloud-zoom" id="zoomID" rel="zoomWidth:350,zoomHeight:350,position:'inside',adjustX:0,adjustY:0" href="{$goods.goods_img}">
+                 <img class="img-responsive" src="{$goods.goods_img}" alt="{$goods.goods_name|escape:html}"/> 
+              </a> 
+            </p> 
+             <div class="more-views" id="moreViews"> 
+              <ul class="slides"> 
+              <!-- {foreach from=$pictures item=picture}-->
+                <li> <a href="{if $picture.thumb_url}{$picture.thumb_url}{else}{$picture.img_url}{/if}" title="" class="cloud-zoom-gallery" rel="useZoom:'zoomID',smallImage:'{if $picture.thumb_url}{$picture.thumb_url}{else}{$picture.img_url}{/if}'"> <img class="img-responsive" src="{if $picture.thumb_url}{$picture.thumb_url}{else}{$picture.img_url}{/if}" alt="{$goods.goods_name}" /> </a> </li> 
+              <!--{/foreach}-->
+              </ul> 
+             </div> 
+            </div> 
+          <form action="javascript:addToCart({$goods.goods_id})" method="post" name="ECS_FORMBUY" id="ECS_FORMBUY" >
+              <div class="product-shop col-lg-7 col-md-7 col-sm-7 col-xs-12"> 
+               <div class="product-shop-content"> 
+                <div class="product-name"> 
+                 <h1> {$goods.goods_style_name} </h1> 
+                </div> 
+                <div class="wapper-view"> 
+                 <div class="price-box pro-detail-price"> 
+                  <span class="regular-price"> <span class="price"  id="ECS_GOODS_AMOUNT"> {$goods.shop_price_formated} </span> </span> 
+                 </div> 
+                </div> 
+                <div class="add-to-box pro-detail-kw"> 
+                 <div class="add-to-cart"> 
+                  <div class="quantity-input pull-left"> 
+                      <!-- {* 开始循环所有可选属性 *} -->
+                      <!-- {foreach from=$specification item=spec key=spec_key} -->
+                                   <p> 
+                                    <lable>
+                                      {$spec.name}
+                                    </lable> </p> 
+                                    <!-- {if $spec.attr_type eq 1} -->
+                                      <!-- {if $cfg.goodsattr_style eq 1} -->
+                                        <!-- {foreach from=$spec.values item=value key=key} -->
+                                        <label for="spec_value_{$value.id}">
+                                        <input type="radio" name="spec_{$spec_key}" value="{$value.id}" id="spec_value_{$value.id}" {if $key eq 0}checked{/if} onclick="changePrice()" />
+                                        {$value.label} [{if $value.price gt 0}{$lang.plus}{elseif $value.price lt 0}{$lang.minus}{/if} {$value.format_price|abs}] </label><br />
+                                        <!-- {/foreach} -->
+                                        <input type="hidden" name="spec_list" value="{$key}" />
+                                        <!-- {else} -->
+                                        <select name="spec_{$spec_key}" onchange="changePrice()">
+                                          <!-- {foreach from=$spec.values item=value key=key} -->
+                                          <option label="{$value.label}" value="{$value.id}">{$value.label} {if $value.price gt 0}{$lang.plus}{elseif $value.price lt 0}{$lang.minus}{/if}{if $value.price neq 0}{$value.format_price}{/if}</option>
+                                          <!-- {/foreach} -->
+                                        </select>
+                                        <input type="hidden" name="spec_list" value="{$key}" />
+                                      <!-- {/if} -->
+                                    <!-- {else} -->
+                                      <!-- {foreach from=$spec.values item=value key=key} -->
+                                      <label for="spec_value_{$value.id}">
+                                      <input type="checkbox" name="spec_{$spec_key}" value="{$value.id}" id="spec_value_{$value.id}" onclick="changePrice()" />
+                                      {$value.label} [{if $value.price gt 0}{$lang.plus}{elseif $value.price lt 0}{$lang.minus}{/if} {$value.format_price|abs}] </label><br />
+                                      <!-- {/foreach} -->
+                                      <input type="hidden" name="spec_list" value="{$key}" />
+                                    <!-- {/if} -->
+                      <!-- {/foreach} -->
+                      <!-- {* 结束循环可选属性 *} -->
+                   <input name="number" type="hidden" id="number" value="1" />
+                  </div> 
+                 </div> 
+                 <div class="addto-bottom"> 
+                  <a href="javascript:addToCart({$goods.goods_id})">
+                  <button type="button" class="button btn-cart mt-tooltip" style="height:30px;   border-radius: 30px;" data-original-title="加入购物篮"> 
+                    <span style="font-size: 16px;font-weight:normal;padding:0 26px;"> 加入购物篮 </span> 
+                    </button> 
+                  </a>
+                  <div class="product-add-to-links"> 
+                   <ul class="add-to-links"> 
+                    <li> <a href="javascript:collect({$goods.goods_id})" class="link-wishlist mt-tooltip" data-original-title="收藏"> <i class="fa fa-heart" style="font-size:12px;"> </i> </a> </li> 
+                   </ul> 
+                  </div> 
+                 </div> 
+                </div> 
+               </div> 
+              </div> 
+          </form>          
+          <!-- 缩略图 -->
+             <script type="text/javascript">
+                $mt(document).ready(function() {
+                  bindMoreViewsFlexSlider();
+                });
+                function bindMoreViewsFlexSlider() {
+                  var count = 3;
+                  $mt('#moreViews').flexslider({
+                    namespace: 'more-views-',
+                    slideshow: false,
+                    animation: "slide",
+                    itemWidth: getMoreViewsItemWidth('moreViews', count, 5),
+                    itemMargin: 5,
+                    minItems: 1,
+                    maxItems: count,
+                    selector: ".slides > li",
+                    controlNav: false
+                  });
+                }
+                function getMoreViewsItemWidth(id, column, margin) {
+                  var width = $mt('#' + id).width();
+                  return (width / column).toFixed(2) - margin * 2;
+                }
+              </script> 
+          </div> 
+          <div class="product-collateral"> 
+           <ul class="product-tabs clearfix"> 
+            <li class="detail-tab-title active"> <a href="javascript:void(0)"> 甜品详情 </a> </li> 
+           </ul> 
+           <div class="title-divider">
+             &nbsp; 
+           </div> 
+           <div class="product-tabs-content" id="product_tabs_description_contents"> 
+            <div class="product-tabs-content-inner clearfix"> 
+             <h2> 甜品详情 </h2> 
+             <div class="product-detail">
+               {$goods.goods_desc}
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+          <div class="product-news product-relative" id="widget-836c4fb1dfc48a2218ca5a58609bc0e0"> 
+           <h2> 相关产品</h2> 
+           <ul class="products-grid "> 
+          <!-- #BeginLibraryItem "/library/goods_related.lbi" -->
+
+          <!-- {if $related_goods} -->
+            <!--{foreach from=$related_goods item=releated_goods_data}-->
+              <li class="item">
+                <div class="item-upsell">
+                  <a class="product-image" href="{$linked_goods_data.url}" target="_blank" title="{$goods.linked_goods_data_name|escape:html}">
+                    <img src="{$linked_goods_data.goods_thumb}" alt="{$linked_goods_data.name|escape:html}" width="220" height="260">
+                  </a>
+                  <h3 class="product-name">
+                    <a href="{$linked_goods_data.url}" target="_blank" title="{$goods.linked_goods_data_name|escape:html}">
+                      test {$linked_goods_data.short_name|escape:html}
+                    </a>
+                    <p style="
+                        padding-top: 10px;
+                        color: #999;
+                        font-size: 16px;
+                    ">{$linked_goods_data.shop_price}
+                    </p>
+                  </h3>
+                  <div class="confix-produclist">
+                    <div class="add-to-links">
+                      <div class="wishlist">
+                        <a href="#" data-id="13" data-placement="left" class="link-wishlist mt-tooltip"
+                        data-original-title="收藏">
+                          <i class="fa fa fa-heart-o">
+                          </i>
+                        </a>
+                      </div>
+                      <div class="compare">
+                        <a href="{$linked_goods_data.url}" data-id="13" data-placement="left" class="link-compare  mt-tooltip"
+                        data-original-title="详情">
+                          <i class="fa fa-expand">
+                          </i>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mt-actions">
+                    <div class="addtocart">
+                      <a href="{$linked_goods_data.url}" target="_blank" title="{$goods.linked_goods_data_name|escape:html}"><button type="button" data-placement="left" class="button btn-cart mt-tooltip"
+                      onclick="setLocation('#')" data-original-title="加入购物篮">
+                        <span>
+                          <span>
+                            <i class="fa mt-fa-shopping-cart">
+                            </i>
+                            加入购物篮
+                          </span>
+                        </span>
+                      </button></a>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            <!--{/foreach}-->
+          <!-- {/if} -->
+
+          <!-- #EndLibraryItem -->
+           </ul> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </section> 
+        <!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
+   </section> 
+  </section> 
+  <!-- 属性随数量改变 start -->
+<script type="text/javascript">
+var goods_id = {$goods_id};
+var goodsattr_style = {$cfg.goodsattr_style|default:1};
+var gmt_end_time = {$promote_end_time|default:0};
+{foreach from=$lang.goods_js item=item key=key}
+var {$key} = "{$item}";
+{/foreach}
+var goodsId = {$goods_id};
+var now_time = {$now_time};
+
+<!-- {literal} -->
+onload = function(){
+  changePrice();
+  fixpng();
+  try { onload_leftTime(); }
+  catch (e) {}
+}
+
+/**
+ * 点选可选属性或改变数量时修改商品价格的函数
+ */
+function changePrice()
+{
+  var attr = getSelectedAttributes(document.forms['ECS_FORMBUY']);
+  var qty = document.forms['ECS_FORMBUY'].elements['number'].value;
+
+  Ajax.call('goods.php', 'act=price&id=' + goodsId + '&attr=' + attr + '&number=' + qty, changePriceResponse, 'GET', 'JSON');
+}
+
+/**
+ * 接收返回的信息
+ */
+function changePriceResponse(res)
+{
+  if (res.err_msg.length > 0)
+  {
+    alert(res.err_msg);
+  }
+  else
+  {
+    document.forms['ECS_FORMBUY'].elements['number'].value = res.qty;
+
+    if (document.getElementById('ECS_GOODS_AMOUNT'))
+      document.getElementById('ECS_GOODS_AMOUNT').innerHTML = res.result;
+  }
+}
+<!-- {/literal} -->
+</script> 
+ <!-- 属性随数量改变 end-->
+ </body>
+</html>
